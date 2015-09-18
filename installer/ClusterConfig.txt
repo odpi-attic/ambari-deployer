@@ -1,0 +1,22 @@
+{
+  "blueprint" : "SampleBlueprintCluster",
+  "default_password" : "ambari",
+  "host_groups" :[
+    {
+      "name" : "host_group_1", 
+      "hosts" : [         
+        {
+          "fqdn" : "ip-10-188-73-104.us-west-1.compute.internal"
+        }
+      ]
+    },
+    {
+      "name" : "host_group_2", 
+      "hosts" : [         
+        {
+          "fqdn" : "ip-10-188-73-105.us-west-1.compute.internal"
+        }
+      ]
+    }
+  ]
+}

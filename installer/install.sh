@@ -25,7 +25,7 @@ sudo ambari-server start
 
 if [[ $# > 0 ]]; then
         if [[ $# = 2 ]]; then
-                if [ $1 == "-pem" ]; then
+                if [ $1 = "-pem" ]; then
                         sec="pem"
                         key=$2
 echo "******************************************************************************************"
@@ -50,10 +50,10 @@ echo "Installing Agent in"
 echo $HOSTNAME
 echo "******************************************************************************************"
 
-        if [ $sec == "pem" ]; then
+        if [ $sec = "pem" ]; then
                 sudo ssh -tt -o StrictHostKeyChecking=no -i $key -l ${USERNAME} ${HOSTNAME} "${SCRIPT}" &
         else
-                sudo ssh -o -o StrictHostKeyChecking=no -tt ${HOSTNAME} "${SCRIPT}" &
+                sudo ssh -o StrictHostKeyChecking=no -tt ${HOSTNAME} "${SCRIPT}" &
         fi
 done
 
